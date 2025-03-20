@@ -69,9 +69,9 @@ Win32LoadXInput()
     if(XInputLibrary)
     {
         XInputGetState = (x_input_get_state *)GetProcAddress(XInputLibrary, "XInputGetState");
-    if(!XInputGetState) { XInputGetState = XInputGetStateStub; }
+        if(!XInputGetState) { XInputGetState = XInputGetStateStub; }
         XInputSetState = (x_input_set_state *)GetProcAddress(XInputLibrary, "XInputSetState");
-    if(!XInputSetState) { XInputSetState = XInputSetStateStub; }
+        if(!XInputSetState) { XInputSetState = XInputSetStateStub; }
     }
     else
     {
@@ -82,7 +82,7 @@ Win32LoadXInput()
     }
 }
 
-//Sould the interface and mastering voice be global?
+//Sould the interface and mastering voice be global? something for git to edit.
 //TODO: add COM initialization - why? I dont know - maybe research why.
 internal void xAudio2_Init(){
   if(SUCCEEDED(XAudio2Create(&globalXAudio2, 0, XAUDIO2_DEFAULT_PROCESSOR))){
